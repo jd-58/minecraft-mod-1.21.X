@@ -1,5 +1,6 @@
 package com.jd58.paintballmod;
 
+import com.jd58.paintballmod.block.ModBlocks;
 import com.jd58.paintballmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -44,6 +45,7 @@ public class PaintballMod
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -66,6 +68,10 @@ public class PaintballMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.PAINTBALLGUN);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.PAINTBALL_BLOCK);
+    }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
