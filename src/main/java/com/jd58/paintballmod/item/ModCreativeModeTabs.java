@@ -22,6 +22,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PAINTBALLGUN);
                         output.accept(ModBlocks.PAINTBALL_BLOCK);
 
+                        output.accept(ModItems.PAINTBALLGUNITEM);
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
