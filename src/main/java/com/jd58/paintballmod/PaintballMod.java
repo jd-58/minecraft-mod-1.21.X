@@ -1,6 +1,7 @@
 package com.jd58.paintballmod;
 
 import com.jd58.paintballmod.block.ModBlocks;
+import com.jd58.paintballmod.item.ModCreativeModeTabs;
 import com.jd58.paintballmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -43,6 +44,8 @@ public class PaintballMod
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

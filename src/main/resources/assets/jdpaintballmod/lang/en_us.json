@@ -1,6 +1,8 @@
 {
   "item.jdpaintballmod.paintballgun": "Paintball Gun",
 
-  "block.jdpaintballmod.paintball_block": "Paintball Block"
+  "block.jdpaintballmod.paintball_block": "Paintball Block",
+
+  "creativetab.jdpaintballmod.paintball_items": "Paintball Items"
 
 }
