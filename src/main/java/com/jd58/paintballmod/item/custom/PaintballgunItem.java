@@ -26,13 +26,14 @@ public class PaintballgunItem extends BowItem {
         if (!level.isClientSide) {
             Snowball snowball = new Snowball(level, player);
             snowball.setItem(new ItemStack(net.minecraft.world.item.Items.SNOWBALL));
-            snowball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1.75F, 1.4F);
+            snowball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1.85F, 1.15F);
+            snowball.setDeltaMovement(snowball.getDeltaMovement().normalize().scale(1.85)); // Set fixed velocity
             level.addFreshEntity(snowball);
         }
 
         player.awardStat(Stats.ITEM_USED.get(this));
         itemstack.shrink(0);
 
-        return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+        return InteractionResultHolder.pass(itemstack);
     }
 }
